@@ -1,0 +1,48 @@
+/* 
+
+red : e9311a
+orange : ed6335
+yellow : ecae7d
+light green : 8db4ad
+teal : 026c80
+blue : 064c72
+
+*/
+
+body {
+  background-color: #e5d5c0;
+}
+
+header {
+  height: 64px;
+  line-height: 64px;
+  position: absolute;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 1.6em;
+  margin: 0 24px;
+}
+nav {
+  display: inline-block;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+nav ul li {
+  margin-left: 16px;
+  cursor: pointer;
+}
+nav ul li.on,
+nav ul li:hover {
+  color: dodgerblue;
+  text-decoration: underline;
+}
+
+main {
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
