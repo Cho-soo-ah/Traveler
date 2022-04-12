@@ -6,68 +6,18 @@ import {
   Graticule,
   ZoomableGroup,
   Sphere,
+  Marker,
 } from "react-simple-maps";
 import { PatternLines } from "@vx/pattern";
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
-const highlighted = [
-  "BRA",
-  "VNM",
-  "COL",
-  "IDN",
-  "ETH",
-  "HND",
-  "IND",
-  "UGA",
-  "MEX",
-  "GTM",
-  "PER",
-  "NIC",
-  "CHN",
-  "CIV",
-  "CRI",
-  "KEN",
-  "PNG",
-  "TZA",
-  "SLV",
-  "ECU",
-  "CMR",
-  "LAO",
-  "MDG",
-  "GAB",
-  "THA",
-  "VEN",
-  "DOM",
-  "HTI",
-  "COD",
-  "RWA",
-  "BDI",
-  "PHL",
-  "TGO",
-  "GIN",
-  "YEM",
-  "CUB",
-  "PAN",
-  "BOL",
-  "TLS",
-  "CAF",
-  "NGA",
-  "GHA",
-  "SLE",
-  "AGO",
-  "JAM",
-  "PRY",
-  "MWI",
-  "TTO",
-  "ZWE",
-  "LBR",
-];
+const highlighted = ["KOR"];
 
 const MapChart = () => {
   return (
     <ComposableMap projection="geoEqualEarth">
-      <ZoomableGroup zoom={1.5}>
+      <ZoomableGroup zoom={1.8}>
         {/* 패턴 */}
         <PatternLines
           id="lines"
@@ -93,11 +43,29 @@ const MapChart = () => {
                   geography={geo}
                   fill={isHighlighted ? "url('#lines')" : "#8db4ad"}
                   onClick={() => console.log(geo.properties.ISO_A3)}
+                  style={{
+                    default: {
+                      transition: "all 250ms",
+                      outline: "none",
+                    },
+                    hover: {
+                      fill: "#ed6335",
+                      stroke: "#e9311a",
+                      transition: "all 250ms",
+                      cursor: "pointer",
+                      outline: "none",
+                    },
+                  }}
                 />
               );
             })
           }
         </Geographies>
+        <Marker coordinates={[-101, 53]} fill="#777">
+          <text textAnchor="middle" fill="#F53">
+            Canada
+          </text>
+        </Marker>
       </ZoomableGroup>
     </ComposableMap>
   );

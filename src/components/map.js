@@ -2,13 +2,13 @@ import "./components.css";
 import MapChart from "./MapChart/MapChart";
 import SideBar from "./sidebar";
 
-function Maps() {
+function Map() {
   return (
-    <div id="maps" className="component">
+    <div id="map" className="component">
       <MapChart />
       <SideBar />
     </div>
   );
 }
 
-export default Maps;
+export default Map;

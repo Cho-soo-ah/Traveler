@@ -23,6 +23,7 @@ h1 {
   display: inline-block;
   font-size: 1.6em;
   margin: 0 24px;
+  color: #064c72;
 }
 nav {
   display: inline-block;
@@ -33,16 +34,25 @@ nav ul {
   flex-direction: row;
 }
 nav ul li {
-  margin-left: 16px;
+  margin-left: 24px;
   cursor: pointer;
 }
 nav ul li.on,
 nav ul li:hover {
-  color: dodgerblue;
-  text-decoration: underline;
+  color: #e9311a;
 }
 
 main {
-  height: calc(100vh - 64px);
+  height: 100vh;
   overflow: hidden;
+}
+
+svg {
+  /* animation: rotate_map 60s linear infinite; */
+  transform-origin: 50% 50%;
+}
+@keyframes rotate_map {
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
 }

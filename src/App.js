@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { ApolloProvider } from "@apollo/client";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-import Maps from "./components/maps";
-import Teams from "./components/teams";
-import People from "./components/people";
+import Map from "./components/map";
+import Event from "./components/event";
+import News from "./components/news";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000",
@@ -13,12 +13,12 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [menu, setMenu] = useState("Maps");
+  const [menu, setMenu] = useState("Map");
 
   let mainComp = {
-    Maps: <Maps />,
-    Teams: <Teams />,
-    People: <People />,
+    Map: <Map />,
+    Event: <Event />,
+    News: <News />,
   };
 
   function NavMenus() {
