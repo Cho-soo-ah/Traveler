@@ -13,11 +13,21 @@ import { PatternLines } from "@vx/pattern";
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 const highlighted = ["KOR"];
+const mapWidth = 800;
+const mapHeight = 550;
 
 const MapChart = () => {
   return (
     <ComposableMap projection="geoEqualEarth">
-      <ZoomableGroup zoom={1.8}>
+      <ZoomableGroup
+        minZoom={1.5}
+        maxZoom={3}
+        zoom={1.5}
+        translateExtent={[
+          [-mapWidth * 2, 50],
+          [mapWidth * 2, mapHeight],
+        ]}
+      >
         {/* 패턴 */}
         <PatternLines
           id="lines"
@@ -61,11 +71,11 @@ const MapChart = () => {
             })
           }
         </Geographies>
-        <Marker coordinates={[-101, 53]} fill="#777">
+        {/* <Marker coordinates={[-101, 53]} fill="#777">
           <text textAnchor="middle" fill="#F53">
             Canada
           </text>
-        </Marker>
+        </Marker> */}
       </ZoomableGroup>
     </ComposableMap>
   );
