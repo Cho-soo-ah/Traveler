@@ -59,8 +59,8 @@ const MapChart = () => {
                       outline: "none",
                     },
                     hover: {
-                      fill: "#ed6335",
-                      stroke: "#e9311a",
+                      fill: "#026c80",
+                      stroke: "#064c72",
                       transition: "all 250ms",
                       cursor: "pointer",
                       outline: "none",

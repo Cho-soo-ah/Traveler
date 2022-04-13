@@ -56,3 +56,10 @@ svg {
     transform: rotate3d(0, 1, 0, 360deg);
   }
 }
+
+#squiggle {
+  position: fixed;
+  top: 200px;
+  left: 200px;
+  z-index: -999;
+}
