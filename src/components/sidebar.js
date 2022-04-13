@@ -30,21 +30,21 @@ const GET_ROLE = gql`
 `;
 
 function SideBar() {
-  const [contentId, setContentId] = useState("");
+  // const [contentId, setContentId] = useState("");
 
   function AsideItems() {
-    const roleIcons = {
-      developer: "💻",
-      designer: "🎨",
-      planner: "📝",
-    };
-    const { loading, error, data } = useQuery(GET_ROLES);
-    if (loading) return <p className="loading">Loading...</p>;
-    if (error) return <p className="error">Error :(</p>;
+    // const roleIcons = {
+    //   developer: "💻",
+    //   designer: "🎨",
+    //   planner: "📝",
+    // };
+    // const { loading, error, data } = useQuery(GET_ROLES);
+    // if (loading) return <p className="loading">Loading...</p>;
+    // if (error) return <p className="error">Error :(</p>;
 
     return (
       <ul>
-        {data.roles.map(({ id }) => {
+        {/* {data.roles.map(({ id }) => {
           return (
             <li
               key={id}
@@ -57,7 +57,10 @@ function SideBar() {
               {roleIcons[id]} {id}
             </li>
           );
-        })}
+        })} */}
+        <li>login / sign in</li>
+        <li>Check List for travel</li>
+        <li>mypage </li>
       </ul>
     );
   }
